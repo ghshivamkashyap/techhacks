@@ -106,4 +106,4 @@ Follow these steps to install and set up Rapid Receipt on your local machine.
 **Install Dependencies:**
 - CLIENT SIDE: Admin Panel [Vendors]
   ```bash
-  pip install taipy
+  npm i
