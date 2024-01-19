@@ -6,7 +6,7 @@
 
 ### Problems
 **Problem 1: Inefficient Checkout Process**
-In today's digital world, time is a precious commodity. Many grocery store checkouts still require customers to wait in line, contributing to frustration and lost productivity. The traditional checkout process is prone to errors and delays.
+In today's digital world, time is a precious commodity. Many store checkouts still require customers to wait in line, contributing to frustration and lost productivity. The traditional checkout process is prone to errors and delays.
 
 **Merits of an Improved Checkout Process:**
 - Reduced Wait Times
@@ -78,7 +78,7 @@ Follow these instructions to use the Rapid Receipt application:
 **Admin Side: Adding Products Manually**
 - Click the "Add Product" button on the homepage.
 - Fill in product details and click "Save" to add the product to the database.
-
+  
 **Viewing and Managing Products:**
 - Navigate to the "Products" section to view the list of all scanned and manually added products.
 - Edit or delete product information by clicking on the respective product entry.
@@ -102,7 +102,6 @@ Follow these steps to install and set up Rapid Receipt on your local machine.
 - Flutter (for running Mobile App Scanner)
 - MongoDB Atlas (for running Database)
 - Git
-- Python3 (Taipy library used for front-end coding)
 
 **Install Dependencies:**
 - CLIENT SIDE: Admin Panel [Vendors]
