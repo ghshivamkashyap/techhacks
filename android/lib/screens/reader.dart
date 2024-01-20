@@ -162,7 +162,6 @@ class _ScanScreenState extends State<ScanScreen> {
         final totalPrice = billId['totalPrice'];
         final mrp = billId['mrp'];
         final id = billId['_id'];
-        print(id);
 
         // Display the response data on the screen
         showBillDialog(context, products, totalPrice, mrp, id);
@@ -210,8 +209,9 @@ class _ScanScreenState extends State<ScanScreen> {
                 Text('Products:', style: TextStyle(fontWeight: FontWeight.bold)),
                 for (var product in products) Text('- $product'),
                 SizedBox(height: 16),
-                Text('Total Price Rs: ${totalPrice.toDouble().toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.bold)),
-                Text('MRP Rs: ${mrp.toDouble().toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.bold)),
+                Text('MRP Rs: ${mrp.toDouble().toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.bold, decoration: TextDecoration.lineThrough,)),
+                Text('Total Price Rs: ${totalPrice.toDouble().toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.green, )),
+
                 SizedBox(height: 16),
                 // Display the QR code
                 Padding(

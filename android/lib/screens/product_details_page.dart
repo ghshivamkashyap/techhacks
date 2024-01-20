@@ -41,7 +41,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     if (response.statusCode == 200) {
       Data = json.decode(response.body)['data'];
       // final pricesData = Data['data'];
-      print('$Data');
+
 
       setState(() {
         // prices = pricesData;
@@ -317,7 +317,6 @@ class PriceCardTile extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 5.0),
               Row(
                 children: [
                   Text(
@@ -325,7 +324,7 @@ class PriceCardTile extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+                      fontSize: 12.0,
                     ),
                   ),
                 ],

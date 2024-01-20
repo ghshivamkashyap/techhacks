@@ -76,13 +76,13 @@ class _SecurityCheckScreenState extends State<SecurityCheckScreen> {
                             style: TextStyle(fontSize: 18),
                           ),
                           subtitle: Text(
-                            'Price: \$${product.price.toStringAsFixed(2)}',
+                            'Price: \${product.price.toStringAsFixed(2)}',
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
                       Divider(),
                       Text(
-                        'Total Price: \$${totalPrice.toStringAsFixed(2)}',
+                        'Total Price: \${totalPrice.toStringAsFixed(2)}',
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
