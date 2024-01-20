@@ -135,9 +135,5 @@ Follow these steps to install and set up Rapid Receipt on your local machine.
 </div>
 
 
-<style>
-  .ig11{
-    position:relative;
-    left:17%;
-</style>
+
 
