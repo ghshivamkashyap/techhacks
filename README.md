@@ -9,7 +9,7 @@
 
 </div>
 
-**Scan, Shop, Verify :: Your shopping companion**
+
 
 <!-- ... Rest of your readme content ... -->
 
