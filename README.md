@@ -1,7 +1,21 @@
 # RapidReceipt 📝
 
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: auto;">
+
+  <img src="https://raw.githubusercontent.com/shoaibisa/rapid-receipt/master/images/rapid-receipts-high-resolution-logo-transparent.png" alt="head" height="auto" width="200px" style="
+    position: relative;
+    left: 40%;
+" />
+
+</div>
+
 **Scan, Shop, Verify :: Your shopping companion**
 
+<!-- ... Rest of your readme content ... -->
+
+
+
+  **Scan, Shop, Verify :: Your shopping companion**
 ## Project Overview 😺
 
 ### Problems
@@ -12,6 +26,11 @@ In today's digital world, time is a precious commodity. Many store checkouts sti
 - Reduced Wait Times
 - Enhanced Customer Experience
 - Improved Efficiency
+  
+ <div style="text-align: center;">
+  <img class="ig11" src="https://camo.githubusercontent.com/1544f6f01b86970a88f51b03421a355aa39fc2c4243e9e79e10723444845ce58/68747470733a2f2f746f70736f667477617265636f6d70616e6965732e636f2f66726f6e745f6173736574732f696d672f626c6f672f323536353736302e6a7067" alt="head" height="auto" width="600px" style="position: relative; left: 17%;">
+</div>
+
 
 **Problem 2: Lack of Record-Keeping in Small Businesses**
 Small businesses struggle with accurate sales and inventory records, leading to financial reporting issues, inventory management problems, and tax compliance challenges.
@@ -52,12 +71,13 @@ RapidReceipt simplifies the payment process, providing businesses with powerful 
 ## Table of Contents 📑
 - **Getting Started**
 - **Usage**
+- **Viewing and Managing Products:**
+- **Generating Receipts:**
+- ## Example Use Cases
 - **Installation**
-- **Contributing**
-- **Feature Requests**
-- **Pull Requests**
-- **FAQs**
-- **License**
+- **Prerequisites:**
+- **Install Dependencies:**
+- **Images:**
 
 ## Getting Started 🗒
 Our project is an example of how innovative technology and streamlined processes improve the efficiency and user experience in payment and transactions.
@@ -74,10 +94,6 @@ Follow these instructions to use the Rapid Receipt application:
   - Click the "Scan Barcode" button on the homepage.
   - Use your device's camera to scan the product barcode.
   - The scanned product information will be displayed on the screen.
-
-**Admin Side: Adding Products Manually**
-- Click the "Add Product" button on the homepage.
-- Fill in product details and click "Save" to add the product to the database.
   
 **Viewing and Managing Products:**
 - Navigate to the "Products" section to view the list of all scanned and manually added products.
@@ -97,6 +113,7 @@ Here are some common scenarios where Rapid Receipt can be particularly useful:
 ## Installation 📦
 Follow these steps to install and set up Rapid Receipt on your local machine.
 
+
 **Prerequisites:**
 - Node.js (with npm)
 - Flutter (for running Mobile App Scanner)
@@ -107,3 +124,20 @@ Follow these steps to install and set up Rapid Receipt on your local machine.
 - CLIENT SIDE: Admin Panel [Vendors]
   ```bash
   npm i
+
+## Images &#8887;
+<div style="display: flex; justify-content: space-evenly; align-items: center;">
+    <img src="https://drive.google.com/uc?export=view&id=1KbCzEwlDlQ_3VjbhbiU9YkwyX344t8dw" alt="Home Page" style="width: 250px; margin-right: 30px; ">
+    <img src="https://drive.google.com/uc?export=view&id=1JD7EhN6VS54hS4nb2jvlEHxwWqjzL8mG" alt="Product List" style="width: 250px; margin-right: 30px;">
+    <img src="https://drive.google.com/uc?export=view&id=1iFNNfICYm9dhwP9jAaq9x0BUfhDZskUq" alt="Scanning Products and Creating Cart" style="width: 250px; margin-right: 10px;">
+    <img src="https://drive.google.com/uc?export=view&id=1wfVXVfTVhJkbfyLjKSvRSYuNXgtHO1Wj" alt="Bill Generation" style="width: 250px; margin-right: 10px;">
+    <img src="https://drive.google.com/uc?export=view&id=1YRxcZ-6DWeVvvYUqBgMQhH8Qcuukvi43" alt="Security Check" style="width: 250px;">
+</div>
+
+
+<style>
+  .ig11{
+    position:relative;
+    left:17%;
+</style>
+why the images are not  in centre
