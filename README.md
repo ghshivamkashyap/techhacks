@@ -140,4 +140,4 @@ Follow these steps to install and set up Rapid Receipt on your local machine.
     position:relative;
     left:17%;
 </style>
-why the images are not  in centre
+
