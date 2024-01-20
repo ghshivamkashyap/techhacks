@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ProductDetailsPage extends StatelessWidget {
+class ProductDetailsPage extends StatefulWidget {
   final String image;
   final String name;
   final int mrp;
@@ -15,9 +15,16 @@ class ProductDetailsPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _ProductDetailsPageState createState() => _ProductDetailsPageState();
+}
+
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
+  double reviews = 3.0; // Initialize with a default value
+
+  @override
   Widget build(BuildContext context) {
     // Calculate discount percentage
-    double discountPercentage = ((mrp - currPrice) / mrp) * 100;
+    double discountPercentage = ((widget.mrp - widget.currPrice) / widget.mrp) * 100;
 
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +38,7 @@ class ProductDetailsPage extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
               child: Image.network(
-                image,
+                widget.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -43,7 +50,7 @@ class ProductDetailsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    widget.name,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -53,19 +60,23 @@ class ProductDetailsPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '₹$mrp',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          decoration: TextDecoration.lineThrough,
-                        ),
-                      ),
-                      Text(
-                        '₹$currPrice',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                      RichText(
+                        text: TextSpan(
+                          text: '₹${widget.mrp}',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: '  ₹${widget.currPrice}',
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -77,6 +88,96 @@ class ProductDetailsPage extends StatelessWidget {
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Reviews Section
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Reviews',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          // Update reviews to 1.0 when the first star is tapped
+                          setState(() {
+                            reviews = 1.0;
+                          });
+                        },
+                        child: Icon(
+                          Icons.star,
+                          color: reviews >= 1.0 ? Colors.yellow : Colors.grey,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Update reviews to 2.0 when the second star is tapped
+                          setState(() {
+                            reviews = 2.0;
+                          });
+                        },
+                        child: Icon(
+                          Icons.star,
+                          color: reviews >= 2.0 ? Colors.yellow : Colors.grey,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Update reviews to 3.0 when the third star is tapped
+                          setState(() {
+                            reviews = 3.0;
+                          });
+                        },
+                        child: Icon(
+                          Icons.star,
+                          color: reviews >= 3.0 ? Colors.yellow : Colors.grey,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Update reviews to 4.0 when the fourth star is tapped
+                          setState(() {
+                            reviews = 4.0;
+                          });
+                        },
+                        child: Icon(
+                          Icons.star,
+                          color: reviews >= 4.0 ? Colors.yellow : Colors.grey,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Update reviews to 5.0 when the fifth star is tapped
+                          setState(() {
+                            reviews = 5.0;
+                          });
+                        },
+                        child: Icon(
+                          Icons.star,
+                          color: reviews >= 5.0 ? Colors.yellow : Colors.grey,
+                        ),
+                      ),
+                      SizedBox(width: 8.0),
+                      Text(
+                        '$reviews',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
