@@ -1,9 +1,9 @@
-# RapidReceipt 📝
+# SnapNShop 📝
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: auto;">
 
   <img src="https://res.cloudinary.com/dgdcxdajg/image/upload/cjrj2qlrofsooyabcuy8.jpg" alt="head" height="auto" width="200px" style="
-    position: relative;
+    position: relative;  background-color: transparent;
     left: 40%;
 " />
 
