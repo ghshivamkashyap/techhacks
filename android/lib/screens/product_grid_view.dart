@@ -43,6 +43,7 @@ class ProductGridView extends StatelessWidget {
                     image: product['image'],
                     name: product['name'],
                     mrp: product['mrp'],
+                    pid: product['pid'],
                     currPrice: product['currprice'],
                   ),
                 ),

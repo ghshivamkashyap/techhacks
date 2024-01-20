@@ -5,6 +5,8 @@ class ProductDetailsPage extends StatefulWidget {
   final String name;
   final int mrp;
   final int currPrice;
+  final String pid;
+
 
   const ProductDetailsPage({
     Key? key,
@@ -12,6 +14,7 @@ class ProductDetailsPage extends StatefulWidget {
     required this.name,
     required this.mrp,
     required this.currPrice,
+    required this.pid, //xx
   }) : super(key: key);
 
   @override
@@ -50,7 +53,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.name,
+                    widget.pid,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -213,6 +216,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       ),
                     ),
                   ),
+
                 ],
               ),
             ),
@@ -222,3 +226,4 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
 }
+
