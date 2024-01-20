@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class ProductDetailsPage extends StatefulWidget {
   final String image;
@@ -7,27 +9,52 @@ class ProductDetailsPage extends StatefulWidget {
   final int currPrice;
   final String pid;
 
-
   const ProductDetailsPage({
     Key? key,
     required this.image,
     required this.name,
     required this.mrp,
     required this.currPrice,
-    required this.pid, //xx
+    required this.pid,
   }) : super(key: key);
 
   @override
   _ProductDetailsPageState createState() => _ProductDetailsPageState();
 }
 
+var Data = [];
+
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
-  double reviews = 3.0; // Initialize with a default value
+  double reviews = 3.0;
+  List<Map<String, dynamic>> prices = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchPrices(widget.pid);
+  }
+
+  Future<void> fetchPrices(String pid) async {
+    final response = await http.get(Uri.parse(
+        'https://chitkara-tzcs.onrender.com/api/getsameproducts/$pid'));
+
+    if (response.statusCode == 200) {
+      Data = json.decode(response.body)['data'];
+      // final pricesData = Data['data'];
+      print('$Data');
+
+      setState(() {
+        // prices = pricesData;
+      });
+    } else {
+      print('Failed to fetch prices: ${response.statusCode}');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Calculate discount percentage
-    double discountPercentage = ((widget.mrp - widget.currPrice) / widget.mrp) * 100;
+    double discountPercentage =
+        ((widget.mrp - widget.currPrice) / widget.mrp) * 100;
 
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +64,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Product Image
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
               child: Image.network(
@@ -45,15 +71,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 fit: BoxFit.cover,
               ),
             ),
-
-            // Price Information
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.pid,
+                    widget.name,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -77,6 +101,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                 color: Colors.green,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0,
+                                decoration: TextDecoration.none,
                               ),
                             ),
                           ],
@@ -95,8 +120,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ],
               ),
             ),
-
-            // Reviews Section
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -114,7 +137,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          // Update reviews to 1.0 when the first star is tapped
                           setState(() {
                             reviews = 1.0;
                           });
@@ -126,7 +148,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // Update reviews to 2.0 when the second star is tapped
                           setState(() {
                             reviews = 2.0;
                           });
@@ -138,7 +159,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // Update reviews to 3.0 when the third star is tapped
                           setState(() {
                             reviews = 3.0;
                           });
@@ -150,7 +170,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // Update reviews to 4.0 when the fourth star is tapped
                           setState(() {
                             reviews = 4.0;
                           });
@@ -162,7 +181,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // Update reviews to 5.0 when the fifth star is tapped
                           setState(() {
                             reviews = 5.0;
                           });
@@ -185,8 +203,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ],
               ),
             ),
-
-            // Description Card with Title
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -217,6 +233,35 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ),
 
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Available at',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      Container(
+                        height: 150.0,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: Data.length,
+                          itemBuilder: (context, index) {
+                            var product = Data[index];
+                            return PriceCardTile(
+                              logo: product['address']['logo'],
+                              storeName: product['address']['name'],
+                              storeAddress: product['address']['address'],
+                              currPrice: product['currprice'],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -226,4 +271,71 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     );
   }
 }
+
+
+class PriceCardTile extends StatelessWidget {
+  final String logo;
+  final String storeName;
+  final String storeAddress;
+  final int currPrice;
+
+  const PriceCardTile({
+    Key? key,
+    required this.logo,
+    required this.storeName,
+    required this.storeAddress,
+    required this.currPrice,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200.0,
+      height: 500.0,
+      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      child: Card(
+        elevation: 2.0,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(logo),
+                radius: 22.0,
+              ),
+              Text(
+                storeName,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                storeAddress,
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+              SizedBox(height: 5.0),
+              Row(
+                children: [
+                  Text(
+                    '₹$currPrice',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
