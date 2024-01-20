@@ -2,7 +2,7 @@
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: auto;">
 
-  <img src="https://raw.githubusercontent.com/shoaibisa/rapid-receipt/master/images/rapid-receipts-high-resolution-logo-transparent.png" alt="head" height="auto" width="200px" style="
+  <img src="https://res.cloudinary.com/dgdcxdajg/image/upload/cjrj2qlrofsooyabcuy8.jpg" alt="head" height="auto" width="200px" style="
     position: relative;
     left: 40%;
 " />
