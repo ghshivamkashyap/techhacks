@@ -82,73 +82,40 @@ class ProductDetailsPage extends StatelessWidget {
               ),
             ),
 
-            // Description (Replace this with actual product description)
-            Card(
-              margin: EdgeInsets.all(16.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              elevation: 2.0,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'Product description will be fetched from the backend.',
-                  style: TextStyle(
-                    fontSize: 16.0,
+            // Description Card with Title
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Description',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
+                  SizedBox(height: 8.0),
+                  Card(
+                    margin: EdgeInsets.all(16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    elevation: 2.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Experience a refreshing cleanse with our gentle face wash, formulated to remove impurities and leave your skin revitalized. Elevate your skincare routine with our luxurious face packs, crafted with natural ingredients to detoxify, brighten, and nourish, offering a spa-like experience for a radiant complexion.',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle Buy Now
-                    // Add your logic here
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    padding: EdgeInsets.all(16.0),
-                  ),
-                  child: Text(
-                    'Buy Now',
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                ),
-              ),
-              SizedBox(width: 16.0),
-              Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle Add to Cart
-                    // Add your logic here
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    padding: EdgeInsets.all(16.0),
-                  ),
-                  child: Text(
-                    'Add to Cart',
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

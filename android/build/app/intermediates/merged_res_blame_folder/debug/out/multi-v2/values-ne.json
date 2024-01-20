@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\StudioProjects\\chitkara\\chitkara_hackathon\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ne\\values-ne.xml",
+            "outputFile": "C:\\Users\\USER\\Desktop\\New folder\\techhacks\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ne\\values-ne.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\c5e6066e343a23cadf0e84126bc54229\\transformed\\appcompat-1.2.0\\res\\values-ne\\values-ne.xml",

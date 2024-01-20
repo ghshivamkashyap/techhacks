@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\StudioProjects\\chitkara\\chitkara_hackathon\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\USER\\Desktop\\New folder\\techhacks\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\3db694473890d00d37184af94df24c4c\\transformed\\media-1.0.0\\res\\values-v21\\values-v21.xml",

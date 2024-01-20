@@ -67,7 +67,7 @@ class _ScanScreenState extends State<ScanScreen> {
             elevation: 4,
             child: ListTile(
               title: Text('Product: $productName x$productQuantity'),
-              subtitle: Text('Total Price: \$${(productPrice * productQuantity).toStringAsFixed(2)}'),
+              subtitle: Text('Total Price: \₹${(productPrice * productQuantity).toStringAsFixed(2)}'),
             ),
           );
         },

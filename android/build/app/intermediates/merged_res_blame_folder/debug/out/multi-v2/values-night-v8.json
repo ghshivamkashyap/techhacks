@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\USER\\StudioProjects\\chitkara\\chitkara_hackathon\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\USER\\Desktop\\New folder\\techhacks\\android\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\c5e6066e343a23cadf0e84126bc54229\\transformed\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\USER\\StudioProjects\\chitkara\\chitkara_hackathon\\android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\USER\\Desktop\\New folder\\techhacks\\android\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
